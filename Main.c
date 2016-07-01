@@ -3,9 +3,15 @@
 void main()
 {
 	SeqList mylist;
+	SeqList mylist1;
 	InitSeqList(&mylist);
+	
+	ElemType b =9;
+	mylist1->base[0]=b;
+	
+	printf("%d\n",mylist1->base[0]);
 
-
+	ElemType item;
 	int select = 1;
 	while(select)
 	{
@@ -21,15 +27,23 @@ void main()
 		printf("*******************************************\n");
 		printf("请选择");
 		scanf("%d",&select);
-		if (select=- 0)
+		if (select== 0)
 			break;
 		switch(select)
 		{
 		case 1:
+			printf("请输入要插入的数据（-1为结束）：\n");
+			while(scanf("%d",&item),item != -1)
+			{
+				Push_back(&mylist,item);
+
+			}
+
 			break;
 		case 2:
 			break;
 		case 3:
+			Show_list(&mylist);
 			break;
 		default:
 			printf("input error,please input again:\n");
