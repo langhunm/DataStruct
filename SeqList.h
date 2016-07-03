@@ -8,6 +8,7 @@
 
 typedef int ElemType;
 typedef struct SeqList
+//typedef struct SeqList
 {
 	ElemType *base;
 	int capacity;

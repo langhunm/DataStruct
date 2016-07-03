@@ -5,11 +5,13 @@ void main()
 	SeqList mylist;
 	SeqList mylist1;
 	InitSeqList(&mylist);
+	InitSeqList(&mylist1);
 	
-	ElemType b =9;
-	mylist1->base[0]=b;
-	
-	printf("%d\n",mylist1->base[0]);
+//	ElemType b =9;
+	mylist1.base[0]=9;
+	mylist1.base[1]=2;
+	mylist1.size=2;	
+	printf("%d\n",mylist1.base[0]);
 
 	ElemType item;
 	int select = 1;
@@ -33,6 +35,9 @@ void main()
 		{
 		case 1:
 			printf("请输入要插入的数据（-1为结束）：\n");
+//			scanf("%d",&item);
+//			printf("item=%d",item);
+//			Push_back(&mylist,item);
 			while(scanf("%d",&item),item != -1)
 			{
 				Push_back(&mylist,item);
@@ -44,6 +49,7 @@ void main()
 			break;
 		case 3:
 			Show_list(&mylist);
+			Show_list(&mylist1);
 			break;
 		default:
 			printf("input error,please input again:\n");

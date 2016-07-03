@@ -8,7 +8,8 @@ void InitSeqList(SeqList *list)
 }
 void Show_list(SeqList *list)
 {
-	for(int i ; i <= list->size ; i++)
+	int i;
+	for( i=0 ; i < list->size ; i++)
 	{
 		printf("%d\n",list->base[i]);		//将base看成一个数组了，所以此处使用了[]
 	}
