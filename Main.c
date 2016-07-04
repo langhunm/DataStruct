@@ -46,18 +46,25 @@ void main()
 
 			break;
 		case 2:
+			printf("请输入要头插入的数据（-1为结束）：\n");
+			scanf("%d",&item);
+			Push_front(&mylist,item);
+//			while(scanf("%d",&item),item!=-1)
+//			{
+//				Push_front(&mylist,item);
+//			
+//			}
 			break;
 		case 3:
 			Show_list(&mylist);
-			Show_list(&mylist1);
+//			Show_list(&mylist1);
 			break;
+
+		case 13:
+			Clear(&mylist);
 		default:
 			printf("input error,please input again:\n");
 			break;
-
-
-
-
 		}
 	}
 

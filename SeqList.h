@@ -18,6 +18,6 @@ typedef struct SeqList
 void InitSeqList(SeqList *list);
 void Show_list(SeqList *list);
 void Push_back(SeqList *list,ElemType e);
-
-
+void Push_front(SeqList *list,ElemType e);
+void Clear(SeqList *list);
 #endif
