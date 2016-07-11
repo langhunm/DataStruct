@@ -6,6 +6,9 @@ void InitSeqList(SeqList *list)
 	list->capacity = 8;
 	list->size = 0;
 }
+
+
+
 void Show_list(SeqList *list)
 {
 	int i;
@@ -25,6 +28,10 @@ void Push_back(SeqList *list,ElemType e)
 	list->base[list->size]=e;
 	list->size++;
 }
+
+
+
+
 void Push_front(SeqList *list,ElemType e)
 {
 //	printf("进入Push-front函数\n");
@@ -50,8 +57,61 @@ void Push_front(SeqList *list,ElemType e)
 	list->base[0]=e;
 	list->size++;
 }
+
+
+
+//尾部删除
+void Pop_back(SeqList *list)
+{
+	if (list->size==0)
+	{
+		printf("链表为空，无法删除元素\n");
+		return;
+	}
+	list->size--;
+}
+
+
+
+void Pop_front(SeqList *list)
+{
+	if (list->size==0)
+	{
+		printf("链表为空，无法删除元素\n");
+		return;
+	}
+	int i;
+	for (i=1; i<list->size; i++)
+	{
+		list->base[i-1]=list->base[i];
+	}
+	list->size--;
+}
+
+
+void Insert_pos(SeqList *list,int x,int pos)
+{
+	if(pos>list->size || pos<0)
+	{
+		printf("插入位置非法。\n");
+		return;
+	}
+	else
+	{
+		int i;
+		for(i=0;i<list->size-pos+1;i++)
+		{
+			list->base[list->size-i]=list->base[list->size-1-i];
+		}
+		list->base[pos-1]=x;
+		list->size++;
+		return;
+	}
+}
+
+
 void Clear(SeqList *list)
 {
-	InitSeqList(list);
+	list->size=0;
 
 }

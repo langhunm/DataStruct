@@ -14,6 +14,8 @@ void main()
 	printf("%d\n",mylist1.base[0]);
 
 	ElemType item;
+	int x;
+	int pos;
 	int select = 1;
 	while(select)
 	{
@@ -55,11 +57,28 @@ void main()
 			
 			}
 			break;
+				
 		case 3:
 			Show_list(&mylist);
 //			Show_list(&mylist1);
 			break;
 
+		case 4:
+			Pop_back(&mylist);
+			break;
+
+		case 5:
+			Pop_front(&mylist);
+			break;
+		case 6:
+//			int x;
+//			int pos;
+			printf("当前链表长度为%d\n",mylist.size);
+			printf("请输入要插入的值和位置(注意：位置不能大于链表长度)：\n");
+			scanf("%d,%d",&x,&pos);
+//			printf("x=%d,pox=%d\n",x,pos);
+			Insert_pos(&mylist,x,pos);
+			break;
 		case 13:
 			Clear(&mylist);
 		default:
