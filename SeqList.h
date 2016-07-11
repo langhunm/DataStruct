@@ -3,6 +3,7 @@
 
 #include<stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 #define SEQLIST_INIT_SIZE 8 
 
 
@@ -23,4 +24,5 @@ void Pop_back(SeqList *list);
 void Pop_front(SeqList *list);
 void Insert_pos(SeqList *list,int x,int pos);
 void Clear(SeqList *list);
+bool find(SeqList *list,int x);
 #endif

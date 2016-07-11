@@ -110,6 +110,25 @@ void Insert_pos(SeqList *list,int x,int pos)
 }
 
 
+bool find(SeqList *list,int x)
+{
+	int i;
+//	if (list->size==0)
+//	{
+//		printf("列表为空，无法查询\n");
+//		return false;
+//	}
+	for(i=0; i<list->size;i++)
+	{
+		if(x==list->base[i])
+		{
+			return true;
+		}
+	}
+	return false;
+}
+
+
 void Clear(SeqList *list)
 {
 	list->size=0;

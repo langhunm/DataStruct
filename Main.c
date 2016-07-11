@@ -79,6 +79,11 @@ void main()
 //			printf("x=%d,pox=%d\n",x,pos);
 			Insert_pos(&mylist,x,pos);
 			break;
+		case 7:	
+			printf("输入查询的值\n");
+			scanf("%d",&x);
+			printf("%b\n",find(&mylist,x));
+			break;
 		case 13:
 			Clear(&mylist);
 		default:
