@@ -24,5 +24,7 @@ void Pop_back(SeqList *list);
 void Pop_front(SeqList *list);
 void Insert_pos(SeqList *list,int x,int pos);
 void Clear(SeqList *list);
-bool find(SeqList *list,int x);
+int Find(SeqList *list,int x);
+int Length(SeqList *list);
+bool Del_pos(SeqList *list , int pos);
 #endif

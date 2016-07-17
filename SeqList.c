@@ -110,7 +110,7 @@ void Insert_pos(SeqList *list,int x,int pos)
 }
 
 
-bool find(SeqList *list,int x)
+int Find(SeqList *list,int x)
 {
 	int i;
 //	if (list->size==0)
@@ -122,12 +122,70 @@ bool find(SeqList *list,int x)
 	{
 		if(x==list->base[i])
 		{
-			return true;
+			return i;
 		}
 	}
-	return false;
+	printf("没要查找的值。\n");
+	return -1;
 }
 
+bool Del_pos(SeqList *list , int pos)
+{
+	if(pos > list->size-1 || pos < 0)
+	{
+		printf("删除位置不合法，删除失败\n");
+		return false;
+	}
+	else
+	{
+		int i;		
+		for( i = pos; i < list->size; i++)
+		{
+			list->base[i] = list->base[i+1];
+		}
+		list->size--;
+		printf("删除成功！\n");
+		return true;
+	}
+}
+
+int Length(SeqList *list)
+{
+
+	return list->size;
+}
+
+
+
+bool Del_val(SeqList *list, int value)
+{
+	int find_pos;
+	if (find_pos=Find(list,value),find_pos != -1)
+	{
+		printf("find_pos=%d\n",find_pos);
+		Del_pos(list,find_pos);
+		return true;
+	}
+	else
+	{
+		printf("没有这个值，删除失败\n");
+		return false;
+	}
+
+}
+
+bool Resver(SeqList *list)
+{
+	ElemType temp;
+	int i,j;
+	for (i = 0,j=list->size-1 ; i<list->size/2; i++,j--)
+	{
+		temp = list->base[i];
+		list->base[i]=list->base[j];
+		list->base[j]=temp;
+	}
+	return true;
+}
 
 void Clear(SeqList *list)
 {

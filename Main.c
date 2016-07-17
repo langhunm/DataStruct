@@ -16,6 +16,7 @@ void main()
 	ElemType item;
 	int x;
 	int pos;
+	int value;
 	int select = 1;
 	while(select)
 	{
@@ -82,10 +83,27 @@ void main()
 		case 7:	
 			printf("输入查询的值\n");
 			scanf("%d",&x);
-			printf("%b\n",find(&mylist,x));
+			printf("%d\n",Find(&mylist,x));
+			break;
+		case 8:
+			printf("长度为:%d\n",Length(&mylist));
+			break;
+		case 9:
+			printf("输入要删除的位置:\n");
+			scanf("%d",&pos);
+			Del_pos(&mylist,pos);
+			break;
+		case 10:
+			printf("输入要删除的值：\n");
+			scanf("%d",&value);
+			Del_val(&mylist,value);
+			break;
+		case 12:
+			Resver(&mylist);
 			break;
 		case 13:
 			Clear(&mylist);
+			break;
 		default:
 			printf("input error,please input again:\n");
 			break;
