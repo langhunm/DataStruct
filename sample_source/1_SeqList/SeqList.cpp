@@ -6,7 +6,7 @@ bool Inc(SeqList *list)
 	ElemType *newbase = (ElemType*)realloc(list->base,sizeof(ElemType)*(list->capacity+INC_SIZE));
 	if(newbase == NULL)
 	{
-		printf("ÔöÅä¿Õ¼äÊ§°Ü,ÄÚ´æ²»×ã.\n");
+		printf("å¢é…ç©ºé—´å¤±è´¥,å†…å­˜ä¸è¶³.\n");
 		return false;
 	}
 	list->base = newbase;
@@ -26,7 +26,7 @@ void push_back(SeqList *list, ElemType x)
 {
 	if(list->size >= list->capacity && !Inc(list))
 	{
-		printf("Ë³Ğò±í¿Õ¼äÒÑÂú£¬%d²»ÄÜÎ²²¿²åÈëÊı¾İ.\n",x);
+		printf("é¡ºåºè¡¨ç©ºé—´å·²æ»¡ï¼Œ%dä¸èƒ½å°¾éƒ¨æ’å…¥æ•°æ®.\n",x);
 		return;
 	}
 	list->base[list->size] = x;
@@ -37,7 +37,7 @@ void push_front(SeqList *list, ElemType x)
 {
 	if(list->size >= list->capacity && !Inc(list))
 	{
-		printf("Ë³Ğò±í¿Õ¼äÒÑÂú£¬%d²»ÄÜÍ·²¿²åÈëÊı¾İ.\n",x);
+		printf("é¡ºåºè¡¨ç©ºé—´å·²æ»¡ï¼Œ%dä¸èƒ½å¤´éƒ¨æ’å…¥æ•°æ®.\n",x);
 		return;
 	}
 
@@ -62,7 +62,7 @@ void pop_back(SeqList *list)
 {
 	if(list->size == 0)
 	{
-		printf("Ë³Ğò±íÒÑ¿Õ,²»ÄÜÎ²²¿É¾³ıÊı¾İ.\n");
+		printf("é¡ºåºè¡¨å·²ç©º,ä¸èƒ½å°¾éƒ¨åˆ é™¤æ•°æ®.\n");
 		return;
 	}
 	
@@ -73,7 +73,7 @@ void pop_front(SeqList *list)
 {
 	if(list->size == 0)
 	{
-		printf("Ë³Ğò±íÒÑ¿Õ,²»ÄÜÎ²²¿É¾³ıÊı¾İ.\n");
+		printf("é¡ºåºè¡¨å·²ç©º,ä¸èƒ½å°¾éƒ¨åˆ é™¤æ•°æ®.\n");
 		return;
 	}
 	for(int i=0; i<list->size-1; ++i)
@@ -87,13 +87,13 @@ void insert_pos(SeqList *list, int pos, ElemType x)
 {
 	if(pos<0 || pos>list->size)
 	{
-		printf("²åÈëÊı¾İµÄÎ»ÖÃ·Ç·¨£¬²»ÄÜ²åÈëÊı¾İ.\n");
+		printf("æ’å…¥æ•°æ®çš„ä½ç½®éæ³•ï¼Œä¸èƒ½æ’å…¥æ•°æ®.\n");
 		return;
 	}
 
 	if(list->size >= list->capacity && !Inc(list))
 	{
-		printf("Ë³Ğò±í¿Õ¼äÒÑÂú£¬%d²»ÄÜ°´Î»ÖÃ²åÈëÊı¾İ.\n",x);
+		printf("é¡ºåºè¡¨ç©ºé—´å·²æ»¡ï¼Œ%dä¸èƒ½æŒ‰ä½ç½®æ’å…¥æ•°æ®.\n",x);
 		return;
 	}
 
@@ -124,7 +124,7 @@ void delete_pos(SeqList *list, int pos)
 {
 	if(pos<0 || pos>=list->size)
 	{
-		printf("É¾³ıÊı¾İµÄÎ»ÖÃ·Ç·¨,²»ÄÜÉ¾³ıÊı¾İ.\n");
+		printf("åˆ é™¤æ•°æ®çš„ä½ç½®éæ³•,ä¸èƒ½åˆ é™¤æ•°æ®.\n");
 		return;
 	}
 
@@ -140,7 +140,7 @@ void delete_val(SeqList *list, ElemType key)
 	int pos = find(list,key);
 	if(pos == -1)
 	{
-		printf("ÒªÉ¾³ıµÄÊı¾İ²»´æÔÚ.\n");
+		printf("è¦åˆ é™¤çš„æ•°æ®ä¸å­˜åœ¨.\n");
 		return;
 	}
 	
@@ -230,7 +230,7 @@ void insert_pos(SeqList *list, int pos, ElemType x)
 {
 	if(pos<0 || pos>list->size)
 	{
-		printf("²åÈëÊı¾İµÄÎ»ÖÃ·Ç·¨£¬²»ÄÜ²åÈëÊı¾İ.\n");
+		printf("æ’å…¥æ•°æ®çš„ä½ç½®éæ³•ï¼Œä¸èƒ½æ’å…¥æ•°æ®.\n");
 		return;
 	}
 

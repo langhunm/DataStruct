@@ -44,7 +44,7 @@ void main()
 		printf("* [13] clear        [14*]  destroy   *\n");
 		printf("* [0]  quit_system                   *\n");
 		printf("**************************************\n");
-		printf("ÇëÑ¡Ôñ:>");
+		printf("è¯·é€‰æ‹©:>");
 		scanf("%d",&select);
 		if(select == 0)
 			break;
@@ -52,14 +52,14 @@ void main()
 		switch(select)
 		{
 		case 1:
-			printf("ÇëÊäÈëÒª²åÈëµÄÊı¾İ(-1½áÊø):>");
+			printf("è¯·è¾“å…¥è¦æ’å…¥çš„æ•°æ®(-1ç»“æŸ):>");
 			while(scanf("%d",&Item),Item!=-1)
 			{
 				push_back(&mylist,Item);
 			}
 			break;
 		case 2:
-			printf("ÇëÊäÈëÒª²åÈëµÄÊı¾İ(-1½áÊø):>");
+			printf("è¯·è¾“å…¥è¦æ’å…¥çš„æ•°æ®(-1ç»“æŸ):>");
 			while(scanf("%d",&Item),Item!=-1)
 			{
 				push_front(&mylist,Item);
@@ -75,31 +75,31 @@ void main()
 			pop_front(&mylist);
 			break;
 		case 6:
-			printf("ÇëÊäÈëÒª²åÈëÊı¾İ:>");
+			printf("è¯·è¾“å…¥è¦æ’å…¥æ•°æ®:>");
 			scanf("%d",&Item);
-			printf("ÇëÊäÈëÒª²åÈëµÄÎ»ÖÃ:>");
+			printf("è¯·è¾“å…¥è¦æ’å…¥çš„ä½ç½®:>");
 			scanf("%d",&pos);
 			insert_pos(&mylist,pos,Item);
 			break;
 		case 7:
-			printf("ÇëÊäÈëÒª²éÕÒµÄÊı¾İ:>");
+			printf("è¯·è¾“å…¥è¦æŸ¥æ‰¾çš„æ•°æ®:>");
 			scanf("%d",&Item);
 			pos = find(&mylist,Item);
 			if(pos == -1)
-				printf("²éÕÒµÄÊı¾İ%dÔÚË³Ğò±íÖĞ²»´æÔÚ.\n",Item);
+				printf("æŸ¥æ‰¾çš„æ•°æ®%dåœ¨é¡ºåºè¡¨ä¸­ä¸å­˜åœ¨.\n",Item);
 			else
-				printf("²éÕÒµÄÊı¾İ%dÔÚË³Ğò±íÖĞµÄ%dÏÂ±êÎ»ÖÃ.\n",Item,pos);
+				printf("æŸ¥æ‰¾çš„æ•°æ®%dåœ¨é¡ºåºè¡¨ä¸­çš„%dä¸‹æ ‡ä½ç½®.\n",Item,pos);
 			break;
 		case 8:
-			printf("Ë³Ğò±íµÄ³¤¶ÈÎª:> %d\n",length(&mylist));
+			printf("é¡ºåºè¡¨çš„é•¿åº¦ä¸º:> %d\n",length(&mylist));
 			break;
 		case 9:
-			printf("ÇëÊäÈëÒªÉ¾³ıÊı¾İµÄÎ»ÖÃ:>");
+			printf("è¯·è¾“å…¥è¦åˆ é™¤æ•°æ®çš„ä½ç½®:>");
 			scanf("%d",&pos);
 			delete_pos(&mylist,pos);
 			break;
 		case 10:
-			printf("ÇëÊäÈëÒªÉ¾³ıµÄÊı¾İ:>");
+			printf("è¯·è¾“å…¥è¦åˆ é™¤çš„æ•°æ®:>");
 			scanf("%d",&Item);
 			delete_val(&mylist,Item);
 			break;
@@ -116,7 +116,7 @@ void main()
 			//destroy(&mylist);
 		//	break;
 		default:
-			printf("ÊäÈëµÄÑ¡Ôñ´íÎó£¬ÇëÖØĞÂÊäÈë.\n");
+			printf("è¾“å…¥çš„é€‰æ‹©é”™è¯¯ï¼Œè¯·é‡æ–°è¾“å…¥.\n");
 			break;
 		}
 	}
